@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+#begin, #gameBg, #game {
+    width: 600px;
+    height: 650px;
+    margin: 0px auto;
+}
+
+ul {
+    width: 400px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+li {
+    float: left;
+}
+
+#gameBg {
+    position: relative;
+    z-index: 1;
+}
+
+#game {
+    position: absolute;
+    z-index: 2;
+}
+
+table {
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+}
+
+#begin {
+    position: absolute;
+    z-index: 3;
+    background-color: aliceblue;
+}
+#begin p{
+    text-align: center;
+    padding-top: 20px;
+}
+#beginBtn {
+    margin: 50px 230px;
+    width: 100px;
+    height: 50px;
+}
+
+.mouse {
+    background-image: url(./imgs/地鼠.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+td {
+    position: relative;
+}
+
+.mouseTime {
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+#gameOver {
+    width: 600px;
+    height: 400px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+#gameOver p {
+    margin: 10px 200px;
+    font-size: 20px;
+}
+#gameOver button{
+    margin: 0px 230px;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+}
+
+
+#lotteryBg {
+    width: 600px;
+    height: 600px;
+}
+
+
+#lotteryBg {
+    position: relative;
+    z-index: 1;
+} 
+#gameOver {
+    position: absolute;
+    z-index: 2;
+}
+#game {
+    position: absolute;
+    z-index: 3;
+}
+
+#begin {
+    position: absolute;
+    z-index: 4;
+}
+
+#lotteryBg {
+    margin: 0 auto;
+} 
+#lotteryBg button {
+   margin-left: 100px;
+    width: 150px;
+    height: 50px;
+}

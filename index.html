@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="banner.css">
+    <link rel="stylesheet" href="gameAndLottery.css">
+    <link rel="stylesheet" href="head.css">
+</head>
+
+<body>
+    <div id="head1">
+        <p>打地鼠 得大奖</p>
+    </div>
+    <div id="head4" class="head">
+        <p>奖品区</p>
+    </div>
+    <!-- banner图 -->
+    <div id="bannerBg">
+        <img src="./imgs/img1.jpg" alt="轮播图1" id="img1" class="banner">
+        <img src="./imgs/img2.jpg" alt="轮播图2" id="img2" class="banner">
+        <img src="./imgs/img3.jpg" alt="轮播图3" id="img3" class="banner">
+        <button id="previous" class="bannerBtn">previous</button>
+        <button id="next" class="bannerBtn">next</button>
+    </div>
+    <!-- 获取抽奖次数 -->
+    <!-- <button id="getCounts">点击获取抽奖次数</button> -->
+    <div id="head2" class="head">
+        <p>游戏区</p>
+    </div>
+    <div id="gameBg">
+        <div id="begin">
+            <p style="font-size: 20px;">本游戏为打地鼠游戏</p>
+            <br />
+            <p style="color: blueviolet;">游戏规则 </p>
+            <p>大概率每 200ms 出现1个地鼠</p>
+            <p>每个地鼠露头 3 秒钟</p>
+            <p>3 秒钟内未被敲晕则表示该地鼠成功逃脱</p>
+            <p>每个地鼠逃脱会偷吃 1 个萝卜</p>
+            <p>当 5 个萝卜被偷吃完后，游戏结束</p>
+            <br />
+            <p style="color: blueviolet;">奖励规则</p>
+            <p>每敲击一个地鼠会获得 5 分</p>
+            <p>游戏结束后，每 50 分可获得 1 次抽奖机会</p>
+            <p>每次抽奖都有可能抽到上述轮播图中的键盘</p>
+            <button id="beginBtn">开始游戏</button>
+        </div>
+        <div id="game">
+            <p id="score" style="display: block; margin: 0 100px;"">当前得分: 0</p>
+            <!-- 表格 -->
+            <table border=" 1" cellspacing="0" cellpading="0">
+                <tr>
+                    <td><span class="mouseTime"></span></td>
+                    <td><span class="mouseTime"></span></td>
+                    <td><span class="mouseTime"></span></td>
+                    <td><span class="mouseTime"></span></td>
+                </tr>
+
+                <tr>
+                    <td><span class="mouseTime"></span></td>
+                    <td><span class="mouseTime"></span></td>
+                    <td><span class="mouseTime"></span></td>
+                    <td><span class="mouseTime"></span></td>
+                </tr>
+                <tr>
+                    <td><span class="mouseTime"></span></td>
+                    <td><span class="mouseTime"></span></td>
+                    <td><span class="mouseTime"></span></td>
+                    <td><span class="mouseTime"></span></td>
+                </tr>
+                <tr>
+                    <td><span class="mouseTime"></span></td>
+                    <td><span class="mouseTime"></span></td>
+                    <td><span class="mouseTime"></span></td>
+                    <td><span class="mouseTime"></span></td>
+                </tr>
+                </table>
+                <!-- 萝卜列表 -->`
+            <ul id="carrotList">
+                <li><img src="./imgs/萝卜.jpg" alt=""></li>
+                <li><img src="./imgs/萝卜.jpg" alt=""></li>
+                <li><img src="./imgs/萝卜.jpg" alt=""></li>
+                <li><img src="./imgs/萝卜.jpg" alt=""></li>
+                <li><img src="./imgs/萝卜.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div id="gameOver" style="display: none;">
+            <p style="margin: 30px 230px; font-size: 30px;">游戏结束</p>
+            <p id="finalScore">最终得分: </p>
+            <p id="lotteryCounts">抽奖次数: </p>
+            <p id="tip"></p>
+        </div>
+    </div>
+    <div id="head3" class="head">
+        <p>抽奖区</p>
+    </div>
+    <div id="lotteryBg">
+        <table border=" 1" cellspacing="0" cellpading="0">
+            <tr>
+                <td></td>
+                <td></td>
+                <td style="color:orangered ">罗技</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="color: darkorchid;">Cherry</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="color:blue;">IKBC</td>
+            </tr>
+        </table>
+        <button id="clickToGetLotteryCounts">获取当前抽奖次数</button>
+        <button id="clickToLottery">抽奖</button>
+    </div>
+</body>
+<script src="banner.js"></script>
+<script src="gameAndLottery.js"></script>
+
+</html>

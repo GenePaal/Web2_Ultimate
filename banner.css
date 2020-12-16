@@ -1,0 +1,42 @@
+#bannerBg {
+    width: 850px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    z-index: inherit;
+}
+
+.banner {
+    width: 600px;
+    height: 300px;
+    display: block;
+    position: absolute;
+    left: 125px;
+}
+
+#img1 {
+    z-index: 0;
+}
+
+#img2 {
+    z-index: -1;
+}
+
+#img3 {
+    z-index: -2;
+}
+
+.bannerBtn {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 100px;
+}
+
+#previous {
+    left: 0;
+}
+
+#next {
+    right: 0;
+}
