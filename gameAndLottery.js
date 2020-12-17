@@ -96,12 +96,16 @@ clickToGetLotteryCountsBtn.onclick = function () {
 }
 
 // 抽奖按钮一旦点击, 就开始抽奖
+var flag = false;
 var preIndex = 0;
 clickToLotteryBtn.onclick = function () {
     td2[preIndex].style.backgroundColor = "";
-    if (lotteryCounts <= 0) {
+    if (flag) {
+        alert("抽奖正在进行中！");
+    } else if (lotteryCounts <= 0) {
         alert("无抽奖次数");
     } else { // 抽奖
+        flag = true;
         lotteryCounts--;
         // 抽奖的结果
         // 500毫秒 换一个，5秒的时候，结束
@@ -109,13 +113,14 @@ clickToLotteryBtn.onclick = function () {
         var randomIndex = 0;
         var lotteryResult = setInterval(function () {
             if (parseInt(sumTime) == 5) {
-                
+
                 if (td2[randomIndex].innerHTML.indexOf("积分") == -1) {  // 获得键盘加上豪华
                     alert("恭喜获得 " + td2[randomIndex].innerHTML + " 豪华键盘!");
                 } else { // 获得积分
                     alert("恭喜获得 " + td2[randomIndex].innerHTML + " !");
                 }
                 clearInterval(lotteryResult);
+                flag = false;
             } else {
                 sumTime += 200 / 1000;
                 // 如果等于5  停止运行
