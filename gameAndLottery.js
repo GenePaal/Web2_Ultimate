@@ -1,3 +1,4 @@
+// gameAndLottery.js
 var begin = document.getElementById("begin");
 var beginBtn = document.getElementById("beginBtn");
 var td = document.getElementById("game").getElementsByTagName("td");
@@ -74,7 +75,6 @@ beginBtn.onclick = function () {
     }, 200);
 }
 
-// lotteryCounts = 10;
 var clickToGetLotteryCountsBtn = document.getElementById("clickToGetLotteryCounts");
 var clickToLotteryBtn = document.getElementById("clickToLottery");
 var td2 = document.getElementById("lotteryBg").getElementsByTagName("td");
@@ -96,16 +96,12 @@ clickToGetLotteryCountsBtn.onclick = function () {
 }
 
 // 抽奖按钮一旦点击, 就开始抽奖
-var flag = false;
 var preIndex = 0;
 clickToLotteryBtn.onclick = function () {
     td2[preIndex].style.backgroundColor = "";
-    if (flag) {
-        alert("抽奖正在进行中！");
-    } else if (lotteryCounts <= 0) {
+    if (lotteryCounts <= 0) {
         alert("无抽奖次数");
     } else { // 抽奖
-        flag = true;
         lotteryCounts--;
         // 抽奖的结果
         // 500毫秒 换一个，5秒的时候，结束
@@ -120,7 +116,6 @@ clickToLotteryBtn.onclick = function () {
                     alert("恭喜获得 " + td2[randomIndex].innerHTML + " !");
                 }
                 clearInterval(lotteryResult);
-                flag = false;
             } else {
                 sumTime += 200 / 1000;
                 // 如果等于5  停止运行

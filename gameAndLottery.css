@@ -1,3 +1,4 @@
+/* gameAndLottery.css */
 * {
     padding: 0;
     margin: 0;
@@ -44,10 +45,12 @@ table {
     z-index: 3;
     background-color: aliceblue;
 }
-#begin p{
+
+#begin p {
     text-align: center;
     padding-top: 20px;
 }
+
 #beginBtn {
     margin: 50px 230px;
     width: 100px;
@@ -78,32 +81,34 @@ td {
     border: 1px solid black;
     margin: 0 auto;
 }
+
 #gameOver p {
     margin: 10px 200px;
     font-size: 20px;
 }
-#gameOver button{
+
+#gameOver button {
     margin: 0px 230px;
     width: 100px;
     height: 50px;
     font-size: 20px;
 }
 
-
 #lotteryBg {
     width: 600px;
     height: 600px;
 }
 
-
 #lotteryBg {
     position: relative;
     z-index: 1;
-} 
+}
+
 #gameOver {
     position: absolute;
     z-index: 2;
 }
+
 #game {
     position: absolute;
     z-index: 3;
@@ -116,9 +121,10 @@ td {
 
 #lotteryBg {
     margin: 0 auto;
-} 
+}
+
 #lotteryBg button {
-   margin-left: 100px;
+    margin-left: 100px;
     width: 150px;
     height: 50px;
 }
