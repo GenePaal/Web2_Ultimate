@@ -96,35 +96,42 @@ clickToGetLotteryCountsBtn.onclick = function () {
 }
 
 // 抽奖按钮一旦点击, 就开始抽奖
+var isLottering = false;
 var preIndex = 0;
 clickToLotteryBtn.onclick = function () {
-    td2[preIndex].style.backgroundColor = "";
-    if (lotteryCounts <= 0) {
-        alert("无抽奖次数");
-    } else { // 抽奖
-        lotteryCounts--;
-        // 抽奖的结果
-        // 500毫秒 换一个，5秒的时候，结束
-        var sumTime = 0;
-        var randomIndex = 0;
-        var lotteryResult = setInterval(function () {
-            if (parseInt(sumTime) == 5) {
-
-                if (td2[randomIndex].innerHTML.indexOf("积分") == -1) {  // 获得键盘加上豪华
-                    alert("恭喜获得 " + td2[randomIndex].innerHTML + " 豪华键盘!");
-                } else { // 获得积分
-                    alert("恭喜获得 " + td2[randomIndex].innerHTML + " !");
+    if (isLottering) {
+        alert("正在抽奖");
+    } else {
+        isLottering = true;
+        td2[preIndex].style.backgroundColor = "";
+        if (lotteryCounts <= 0) {
+            alert("无抽奖次数");
+        } else { // 抽奖
+            lotteryCounts--;
+            // 抽奖的结果
+            // 500毫秒 换一个，5秒的时候，结束
+            var sumTime = 0;
+            var randomIndex = 0;
+            var lotteryResult = setInterval(function () {
+                if (parseInt(sumTime) == 5) {
+                    if (td2[randomIndex].innerHTML.indexOf("积分") == -1) {  // 获得键盘加上豪华
+                        alert("恭喜获得 " + td2[randomIndex].innerHTML + " 豪华键盘!");
+                    } else { // 获得积分
+                        alert("恭喜获得 " + td2[randomIndex].innerHTML + " !");
+                    }
+                    isLottering = false;
+                    clearInterval(lotteryResult);
+                } else {
+                    sumTime += 200 / 1000;
+                    // 如果等于5  停止运行
+                    td2[preIndex].style.backgroundColor = "";
+                    // 随机的序列  产生0 - 15 的数
+                    randomIndex = parseInt(Math.random() * 16);
+                    preIndex = randomIndex;
+                    td2[randomIndex].style.backgroundColor = "#CCC";
                 }
-                clearInterval(lotteryResult);
-            } else {
-                sumTime += 200 / 1000;
-                // 如果等于5  停止运行
-                td2[preIndex].style.backgroundColor = "";
-                // 随机的序列  产生0 - 15 的数
-                randomIndex = parseInt(Math.random() * 16);
-                preIndex = randomIndex;
-                td2[randomIndex].style.backgroundColor = "#CCC";
-            }
-        }, 100);
+            }, 100);
+        }
     }
+
 }
